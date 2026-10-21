@@ -817,16 +817,16 @@ a {
 .service-card-primary {
     background: #171717;
     color: #ffffff;
-    border-top: 5px solid #f28c28 !important;
+    border-top: 5px solid #d05242 !important;
 }
 
 .service-card-primary .service-number,
 .service-card-primary .text-link {
-    color: #f28c28;
+    color: #d05242;
 }
 
 .service-card-primary .service-symbol {
-    color: #f28c28;
+    color: #d05242;
     background: rgba(242, 140, 40, 0.08);
     border-color: rgba(242, 140, 40, 0.5);
 }
@@ -843,16 +843,16 @@ a {
 .service-card-secondary {
     background: #f1f1f1;
     color: #171717;
-    border-top: 5px solid #f28c28 !important;
+    border-top: 5px solid #d05242 !important;
 }
 
 .service-card-secondary .service-number,
 .service-card-secondary .text-link {
-    color: #b85f13;
+    color: #90362a;
 }
 
 .service-card-secondary .service-symbol {
-    color: #b85f13;
+    color: #90362a;
     background: rgba(242, 140, 40, 0.08);
     border-color: rgba(184, 95, 19, 0.35);
 }
@@ -883,7 +883,7 @@ a {
     justify-content: center;
     width: 44px;
     height: 44px;
-    background: #f28c28;
+    background: #d05242;
     color: #ffffff;
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.7rem;
@@ -904,7 +904,7 @@ a {
 }
 
 .services-bottom-link {
-    color: #b85f13;
+    color: #d05242;
     font-size: 0.8rem;
     font-weight: 800;
     letter-spacing: 0.6px;
@@ -934,7 +934,7 @@ a {
     background: #171717;
     color: #ffffff;
     border: 1px solid #383838 !important;
-    border-top: 5px solid #f28c28 !important;
+    border-top: 5px solid #d05242!important;
     overflow: hidden;
     transition: transform 0.25s ease,
         box-shadow 0.25s ease;
@@ -954,7 +954,7 @@ a {
 }
 
 .service-grid-enhanced .service-number {
-    color: #f28c28;
+    color: #d05242;
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 1.5px;
@@ -984,9 +984,9 @@ a {
     width: 56px;
     height: 56px;
     margin: 12px 0 22px;
-    color: #f28c28;
+    color: #d05242;
     background: rgba(242, 140, 40, 0.08);
-    border: 1px solid rgba(242, 140, 40, 0.5);
+    border: 1px solid rgba(211, 56, 56, 0.5);
     font-size: 1.8rem;
 }
 
@@ -1012,7 +1012,7 @@ a {
     gap: 12px;
     margin-top: auto;
     padding-top: 8px;
-    color: #f28c28;
+    color: #d05242;
     font-weight: 700;
     letter-spacing: 0.7px;
     text-decoration: none;
@@ -1045,7 +1045,7 @@ a {
     justify-content: center;
     width: 44px;
     height: 44px;
-    background: #f28c28;
+    background: #d05242;
     color: #ffffff;
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.7rem;
@@ -1066,7 +1066,7 @@ a {
 }
 
 .services-bottom-link {
-    color: #b85f13;
+    color: #6d1818;
     font-size: 0.8rem;
     font-weight: 800;
     letter-spacing: 0.6px;
