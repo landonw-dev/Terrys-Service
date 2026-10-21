@@ -711,6 +711,247 @@ a {
     font-size: 0.85rem;
 }
 
+/* =========================
+   Enhanced Services Section
+========================= */
+
+.service-grid-enhanced {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 24px;
+    align-items: stretch;
+    margin-top: 40px;
+}
+
+.service-grid-enhanced .service-card {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border: 1px solid #dedede;
+    transition: transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.service-grid-enhanced .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+}
+
+.service-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    min-height: 72px;
+}
+
+.service-grid-enhanced .service-number {
+    position: relative;
+    z-index: 1;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.service-large-number {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 0.8;
+    opacity: 0.13;
+}
+
+.service-grid-enhanced .service-card-content {
+    position: relative;
+    z-index: 1;
+    margin-top: auto;
+}
+
+.service-symbol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    margin: 12px 0 22px;
+    font-size: 1.8rem;
+    border: 1px solid currentColor;
+}
+
+.service-grid-enhanced .service-card h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    font-weight: 800;
+    line-height: 1.05;
+    margin: 0 0 16px;
+}
+
+.service-grid-enhanced .service-card p {
+    font-size: 0.98rem;
+    line-height: 1.8;
+    margin: 0 0 26px;
+    max-width: 48ch;
+}
+
+.service-grid-enhanced .text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    text-decoration: none;
+}
+
+.service-grid-enhanced .text-link span {
+    font-size: 1.3rem;
+    transition: transform 0.2s ease;
+}
+
+.service-grid-enhanced .text-link:hover span {
+    transform: translate(3px, -3px);
+}
+
+/* Main repair card */
+.service-card-primary {
+    background: #171717;
+    color: #ffffff;
+    border-top: 5px solid #f28c28 !important;
+}
+
+.service-card-primary .service-number,
+.service-card-primary .text-link {
+    color: #f28c28;
+}
+
+.service-card-primary .service-symbol {
+    color: #f28c28;
+    background: rgba(242, 140, 40, 0.08);
+    border-color: rgba(242, 140, 40, 0.5);
+}
+
+.service-card-primary .service-large-number {
+    color: #ffffff;
+}
+
+.service-card-primary p {
+    color: #d0d0d0;
+}
+
+/* Secondary salvage card */
+.service-card-secondary {
+    background: #f1f1f1;
+    color: #171717;
+    border-top: 5px solid #f28c28 !important;
+}
+
+.service-card-secondary .service-number,
+.service-card-secondary .text-link {
+    color: #b85f13;
+}
+
+.service-card-secondary .service-symbol {
+    color: #b85f13;
+    background: rgba(242, 140, 40, 0.08);
+    border-color: rgba(184, 95, 19, 0.35);
+}
+
+.service-card-secondary .service-large-number {
+    color: #171717;
+}
+
+.service-card-secondary p {
+    color: #505050;
+}
+
+/* Bottom supporting strip */
+.services-bottom {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 24px;
+    padding: 22px 24px;
+    border: 1px solid #dedede;
+    background: #ffffff;
+}
+
+.services-bottom-mark {
+    display: flex;
+    flex: 0 0 44px;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: #f28c28;
+    color: #ffffff;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 800;
+}
+
+.services-bottom p {
+    flex: 1;
+    margin: 0;
+    color: #555555;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.services-bottom p strong {
+    display: block;
+    color: #171717;
+}
+
+.services-bottom-link {
+    color: #b85f13;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .service-grid-enhanced {
+        grid-template-columns: 1fr;
+    }
+
+    .service-grid-enhanced .service-card {
+        padding: 24px;
+    }
+
+    .service-large-number {
+        font-size: 4rem;
+    }
+
+    .services-bottom {
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .services-bottom p {
+        flex-basis: calc(100% - 65px);
+    }
+
+    .services-bottom-link {
+        margin-left: 58px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .service-grid-enhanced .service-card,
+    .service-grid-enhanced .text-link span {
+        transition: none;
+    }
+
+    .service-grid-enhanced .service-card:hover {
+        transform: none;
+    }
+}
+
 @media (max-width: 768px) {
     .reviews-grid {
         grid-template-columns: 1fr;
