@@ -912,6 +912,213 @@ a {
     white-space: nowrap;
 }
 
+/* =========================
+   Services - Equal Cards
+========================= */
+
+.service-grid-enhanced {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.service-grid-enhanced .service-card {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-width: 0;
+    padding: 30px;
+    background: #171717;
+    color: #ffffff;
+    border: 1px solid #383838 !important;
+    border-top: 5px solid #f28c28 !important;
+    overflow: hidden;
+    transition: transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.service-grid-enhanced .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+}
+
+.service-grid-enhanced .service-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    min-height: 80px;
+}
+
+.service-grid-enhanced .service-number {
+    color: #f28c28;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.service-grid-enhanced .service-large-number {
+    color: #ffffff;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 0.8;
+    opacity: 0.14;
+}
+
+.service-grid-enhanced .service-card-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: flex-start;
+    margin-top: auto;
+}
+
+.service-grid-enhanced .service-symbol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    margin: 12px 0 22px;
+    color: #f28c28;
+    background: rgba(242, 140, 40, 0.08);
+    border: 1px solid rgba(242, 140, 40, 0.5);
+    font-size: 1.8rem;
+}
+
+.service-grid-enhanced .service-card h3 {
+    color: #ffffff;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(1.7rem, 2.5vw, 2.2rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0 0 16px;
+}
+
+.service-grid-enhanced .service-card p {
+    color: #d0d0d0;
+    font-size: 0.98rem;
+    line-height: 1.8;
+    margin: 0 0 26px;
+}
+
+.service-grid-enhanced .text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 8px;
+    color: #f28c28;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    text-decoration: none;
+}
+
+.service-grid-enhanced .text-link span {
+    font-size: 1.3rem;
+    transition: transform 0.2s ease;
+}
+
+.service-grid-enhanced .text-link:hover span {
+    transform: translate(3px, -3px);
+}
+
+/* Supporting strip */
+.services-bottom {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 24px;
+    padding: 22px 24px;
+    background: #ffffff;
+    border: 1px solid #dedede;
+}
+
+.services-bottom-mark {
+    display: flex;
+    flex: 0 0 44px;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: #f28c28;
+    color: #ffffff;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 800;
+}
+
+.services-bottom p {
+    flex: 1;
+    margin: 0;
+    color: #555555;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.services-bottom p strong {
+    display: block;
+    color: #171717;
+}
+
+.services-bottom-link {
+    color: #b85f13;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .service-grid-enhanced {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .service-grid-enhanced .service-card {
+        min-height: 0;
+        padding: 24px;
+    }
+
+    .service-grid-enhanced .service-card h3 {
+        font-size: 1.9rem;
+    }
+
+    .service-grid-enhanced .service-large-number {
+        font-size: 4rem;
+    }
+
+    .services-bottom {
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .services-bottom p {
+        flex-basis: calc(100% - 65px);
+    }
+
+    .services-bottom-link {
+        margin-left: 58px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .service-grid-enhanced .service-card,
+    .service-grid-enhanced .text-link span {
+        transition: none;
+    }
+
+    .service-grid-enhanced .service-card:hover {
+        transform: none;
+    }
+}
+
 /* Responsive layout */
 @media (max-width: 768px) {
     .service-grid-enhanced {
