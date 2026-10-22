@@ -936,6 +936,30 @@ a:focus-visible {
     color: #aaa79e;
 }
 
+
+/* FIX: Keep gauge needles visible above the dial face */
+.gauge::after {
+    z-index: 4;
+    pointer-events: none;
+}
+
+/* Keep the needle's center and text readable */
+.gauge-face {
+    z-index: 3;
+}
+
+/* Make sure each needle starts in a visible position */
+.gauge::after {
+    top: 27%;
+    left: calc(50% - 1px);
+    width: 2px;
+    height: 23%;
+    background: var(--red-hover);
+    border-radius: 4px;
+    box-shadow: 0 0 4px rgba(192, 71, 55, 0.6);
+}
+
+
 /* 15. Tablet layout */
 @media (max-width: 768px) {
     :root {
