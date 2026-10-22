@@ -1,9 +1,9 @@
-/* =========================================
+/* =========================================================
    TERRY'S AUTO SALES AND SALVAGE
-   Consolidated stylesheet
-   ========================================= */
+   Main Stylesheet
+   ========================================================= */
 
-/* Theme */
+/* 1. Theme and design variables */
 :root {
     --charcoal: #222321;
     --charcoal-light: #30312e;
@@ -21,7 +21,7 @@
     --section-space: 88px;
 }
 
-/* Base */
+/* 2. Base styles and shared elements */
 * {
     box-sizing: border-box;
 }
@@ -56,25 +56,6 @@ select {
     font: inherit;
 }
 
-.container {
-    width: min(var(--container-width), calc(100% - 48px));
-    margin-inline: auto;
-}
-
-.section {
-    padding-block: var(--section-space);
-}
-
-.eyebrow {
-    margin: 0 0 14px;
-    color: var(--red);
-    font-size: 0.76rem;
-    font-weight: 700;
-    letter-spacing: 0.16em;
-    line-height: 1.4;
-    text-transform: uppercase;
-}
-
 h1,
 h2,
 h3,
@@ -97,13 +78,32 @@ h2 {
     letter-spacing: 0.015em;
 }
 
-h2 span,
-h1 span {
+h1 span,
+h2 span {
     color: var(--red);
 }
 
 p {
     margin-top: 0;
+}
+
+.container {
+    width: min(var(--container-width), calc(100% - 48px));
+    margin-inline: auto;
+}
+
+.section {
+    padding-block: var(--section-space);
+}
+
+.eyebrow {
+    margin: 0 0 14px;
+    color: var(--red);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    line-height: 1.4;
+    text-transform: uppercase;
 }
 
 .button {
@@ -119,8 +119,11 @@ p {
     letter-spacing: 0.07em;
     text-align: center;
     text-transform: uppercase;
-    transition: background-color 180ms ease, color 180ms ease,
-        border-color 180ms ease, transform 180ms ease;
+    transition:
+        background-color 180ms ease,
+        color 180ms ease,
+        border-color 180ms ease,
+        transform 180ms ease;
 }
 
 .button:hover {
@@ -146,14 +149,19 @@ p {
     background: var(--red);
 }
 
-/* Header and vintage sign-style brand */
+a:focus-visible {
+    outline: 2px solid var(--red-hover);
+    outline-offset: 4px;
+}
+
+/* 3. Header and brand */
 .site-header {
     position: sticky;
     z-index: 20;
     top: 0;
+    border-bottom: 3px solid var(--red);
     background: var(--charcoal);
     color: var(--white);
-    border-bottom: 3px solid var(--red);
 }
 
 .header-inner,
@@ -233,7 +241,7 @@ p {
     color: var(--red-hover);
 }
 
-/* Hero */
+/* 4. Hero section */
 .hero {
     position: relative;
     display: flex;
@@ -241,8 +249,15 @@ p {
     align-items: center;
     overflow: hidden;
     background:
-        linear-gradient(90deg, rgba(20, 21, 19, 0.98) 0%, rgba(20, 21, 19, 0.88) 52%, rgba(20, 21, 19, 0.55) 100%),
-        repeating-linear-gradient(135deg, #30312e 0, #30312e 2px, #282925 2px, #282925 5px);
+        linear-gradient(90deg,
+            rgba(20, 21, 19, 0.98) 0%,
+            rgba(20, 21, 19, 0.88) 52%,
+            rgba(20, 21, 19, 0.55) 100%),
+        repeating-linear-gradient(135deg,
+            #30312e 0,
+            #30312e 2px,
+            #282925 2px,
+            #282925 5px);
     color: var(--white);
 }
 
@@ -250,7 +265,9 @@ p {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: radial-gradient(circle at 85% 45%, transparent 0, rgba(0, 0, 0, 0.16) 58%);
+    background: radial-gradient(circle at 85% 45%,
+            transparent 0,
+            rgba(0, 0, 0, 0.16) 58%);
 }
 
 .hero-content {
@@ -310,7 +327,7 @@ p {
     transform: rotate(45deg);
 }
 
-/* Intro strip */
+/* 5. Red intro strip */
 .intro-strip {
     background: var(--red);
     color: var(--white);
@@ -341,7 +358,7 @@ p {
     letter-spacing: 0.08em;
 }
 
-/* Section headings */
+/* 6. Shared section headings */
 .section-heading {
     max-width: 700px;
     margin: 0 auto 42px;
@@ -353,7 +370,7 @@ p {
     color: #68665f;
 }
 
-/* Services */
+/* 7. Services section */
 .services-section {
     background: var(--cream);
 }
@@ -467,7 +484,7 @@ p {
     transform: translateX(4px);
 }
 
-/* About */
+/* 8. About section and vintage garage sign */
 .about-section {
     background: var(--paper);
 }
@@ -496,7 +513,10 @@ p {
     outline: 1px solid var(--charcoal);
     outline-offset: -12px;
     background:
-        repeating-linear-gradient(0deg, transparent 0, transparent 35px, rgba(255, 255, 255, 0.025) 36px),
+        repeating-linear-gradient(0deg,
+            transparent 0,
+            transparent 35px,
+            rgba(255, 255, 255, 0.025) 36px),
         var(--charcoal);
     color: var(--white);
     text-align: center;
@@ -554,7 +574,7 @@ p {
     font-size: clamp(2.5rem, 5vw, 3.7rem);
 }
 
-/* Dashboard-inspired business stats */
+/* 9. About statistics cards */
 .about-stats {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -633,7 +653,185 @@ p {
     width: 100%;
 }
 
-/* Reviews */
+/* 10. Dashboard panel */
+.business-dashboard {
+    margin-top: 48px;
+    padding: 28px;
+    border: 1px solid #484943;
+    background: var(--charcoal);
+    color: var(--cream);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.dashboard-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.dashboard-heading p {
+    margin: 0;
+    color: var(--cream);
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+.dashboard-light {
+    width: 9px;
+    height: 9px;
+    flex: 0 0 9px;
+    border-radius: 50%;
+    background: var(--red);
+    box-shadow: 0 0 10px rgba(168, 58, 46, 0.7);
+}
+
+.dashboard-rule {
+    height: 1px;
+    flex: 1;
+    background: rgba(242, 236, 223, 0.22);
+}
+
+/* 11. Gauges — one dial, one set of ticks, one needle */
+.gauge-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.gauge-card {
+    min-width: 0;
+    text-align: center;
+}
+
+.gauge {
+    position: relative;
+    display: grid;
+    width: min(100%, 190px);
+    aspect-ratio: 1;
+    place-items: center;
+    margin: 0 auto 14px;
+    padding: 10px;
+    border: 2px solid #77766e;
+    border-radius: 50%;
+    background:
+        repeating-conic-gradient(from -135deg,
+            var(--cream) 0deg 1.5deg,
+            transparent 1.5deg 12deg),
+        #343530;
+    box-shadow:
+        inset 0 0 0 5px var(--charcoal),
+        0 0 0 3px rgba(242, 236, 223, 0.08);
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* The original needle is retained here.
+   Its base stays at the center of the dial. */
+.gauge::after {
+    position: absolute;
+    z-index: 2;
+    top: 27%;
+    left: calc(50% - 1px);
+    width: 2px;
+    height: 23%;
+    border-radius: 4px;
+    background: var(--red-hover);
+    content: "";
+    transform: rotate(35deg);
+    transform-origin: 50% 100%;
+    box-shadow: 0 0 4px rgba(192, 71, 55, 0.35);
+    transition:
+        transform 0.65s cubic-bezier(0.2, 0.8, 0.25, 1),
+        box-shadow 0.3s ease;
+}
+
+/* Each gauge has a different resting needle angle. */
+.gauge-years::after {
+    transform: rotate(5deg);
+}
+
+.gauge-rating::after {
+    transform: rotate(55deg);
+}
+
+/* Inner dial and readable text */
+.gauge-face {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    width: 72%;
+    height: 72%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #5e5e56;
+    border-radius: 50%;
+    background: var(--charcoal);
+    box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gauge-small {
+    color: #c7c1b5;
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.gauge-face strong {
+    margin: 3px 0;
+    color: var(--cream);
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    line-height: 1;
+}
+
+.gauge-caption {
+    color: var(--red-hover);
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.gauge-label {
+    margin: 0;
+    color: var(--cream);
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+/* Redline hover animation */
+.gauge:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        inset 0 0 0 5px var(--charcoal),
+        0 0 10px rgba(192, 71, 55, 0.45),
+        0 0 22px rgba(192, 71, 55, 0.18);
+}
+
+.gauge:hover::after {
+    transform: rotate(75deg);
+    box-shadow: 0 0 8px rgba(192, 71, 55, 0.9);
+}
+
+.gauge-years:hover::after,
+.gauge-rating:hover::after {
+    transform: rotate(75deg);
+}
+
+.gauge:hover .gauge-face {
+    border-color: var(--red-hover);
+    box-shadow:
+        inset 0 0 12px rgba(0, 0, 0, 0.5),
+        0 0 10px rgba(192, 71, 55, 0.3);
+}
+
+/* 12. Reviews */
 .reviews-section {
     background: var(--cream);
 }
@@ -676,7 +874,7 @@ p {
     letter-spacing: 0.1em;
 }
 
-/* Contact banner */
+/* 13. Contact banner */
 .contact-banner {
     padding-block: 62px;
     background: var(--charcoal);
@@ -701,7 +899,7 @@ p {
     color: var(--paper);
 }
 
-/* Footer */
+/* 14. Footer */
 .site-footer {
     padding-block: 28px;
     background: #191a18;
@@ -738,404 +936,14 @@ p {
     color: #aaa79e;
 }
 
-/* Keyboard accessibility */
-a:focus-visible {
-    outline: 2px solid var(--red-hover);
-    outline-offset: 4px;
-}
-
-
-/* ==========================================
-   VINTAGE GARAGE SIGN + DASHBOARD GAUGES
-   Add this block at the END of style.css
-   ========================================== */
-
-/* Vintage sign treatment for the existing About frame */
-.about-frame {
-    position: relative;
-    padding: 24px;
-    border: 3px solid var(--cream, #f2ecdf);
-    outline: 2px solid var(--red, #a83a2e);
-    outline-offset: 5px;
-    background:
-        repeating-linear-gradient(0deg,
-            transparent 0,
-            transparent 28px,
-            rgba(242, 236, 223, 0.035) 29px),
-        var(--charcoal, #222321);
-    color: var(--cream, #f2ecdf);
-    text-align: center;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
-}
-
-.frame-top,
-.frame-bottom {
-    display: block;
-    color: var(--cream, #f2ecdf);
-    font-family: var(--font-heading, "Barlow Condensed", sans-serif);
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-}
-
-.frame-top {
-    padding-bottom: 14px;
-    border-bottom: 1px solid rgba(242, 236, 223, 0.35);
-    font-size: 0.75rem;
-}
-
-.about-symbol {
-    display: grid;
-    width: 96px;
-    height: 96px;
-    place-items: center;
-    margin: 24px auto;
-    border: 4px double var(--cream, #f2ecdf);
-    outline: 1px solid var(--red, #a83a2e);
-    outline-offset: 5px;
-    background: var(--red, #a83a2e);
-    color: #fff;
-    font-family: var(--font-heading, "Barlow Condensed", sans-serif);
-    font-size: 4rem;
-    font-weight: 800;
-}
-
-.frame-bottom {
-    padding-top: 14px;
-    border-top: 1px solid rgba(242, 236, 223, 0.35);
-    font-size: 0.7rem;
-}
-
-.about-caption {
-    margin-top: 18px;
-    font-weight: 700;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-}
-
-/* Dashboard panel */
-.business-dashboard {
-    margin-top: 48px;
-    padding: 28px;
-    border: 1px solid #484943;
-    background: var(--charcoal, #222321);
-    color: var(--cream, #f2ecdf);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-}
-
-.dashboard-heading {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 28px;
-}
-
-.dashboard-heading p {
-    margin: 0;
-    color: var(--cream, #f2ecdf);
-    font-family: var(--font-heading, "Barlow Condensed", sans-serif);
-    font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-}
-
-.dashboard-light {
-    width: 9px;
-    height: 9px;
-    flex: 0 0 9px;
-    border-radius: 50%;
-    background: var(--red, #a83a2e);
-    box-shadow: 0 0 10px rgba(168, 58, 46, 0.7);
-}
-
-.dashboard-rule {
-    height: 1px;
-    flex: 1;
-    background: rgba(242, 236, 223, 0.22);
-}
-
-.gauge-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
-}
-
-.gauge-card {
-    min-width: 0;
-    text-align: center;
-}
-
-.gauge {
-    position: relative;
-    display: grid;
-    width: min(100%, 170px);
-    aspect-ratio: 1;
-    place-items: center;
-    margin: 0 auto 14px;
-    padding: 10px;
-    border: 2px solid #77766e;
-    border-radius: 50%;
-    background:
-        repeating-conic-gradient(from -135deg,
-            var(--cream, #f2ecdf) 0deg 1.5deg,
-            transparent 1.5deg 12deg),
-        #343530;
-    box-shadow:
-        inset 0 0 0 5px #222321,
-        0 0 0 3px rgba(242, 236, 223, 0.08);
-}
-
-/* Red dashboard needle */
-.gauge::after {
-    position: absolute;
-    top: 19%;
-    left: calc(50% - 2px);
-    width: 4px;
-    height: 34%;
-    border-radius: 4px;
-    background: var(--red-hover, #c04737);
-    content: "";
-    transform: rotate(35deg);
-    transform-origin: 50% 100%;
-    box-shadow: 0 0 5px rgba(192, 71, 55, 0.35);
-}
-
-.gauge-face {
-    z-index: 1;
-    display: flex;
-    width: 72%;
-    height: 72%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #5e5e56;
-    border-radius: 50%;
-    background: var(--charcoal, #222321);
-    box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.5);
-}
-
-.gauge-small {
-    color: #c7c1b5;
-    font-size: 0.58rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-}
-
-.gauge-face strong {
-    margin: 3px 0;
-    color: var(--cream, #f2ecdf);
-    font-family: var(--font-heading, "Barlow Condensed", sans-serif);
-    font-size: clamp(1.8rem, 4vw, 2.6rem);
-    line-height: 1;
-}
-
-.gauge-caption {
-    color: var(--red-hover, #c04737);
-    font-size: 0.55rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-}
-
-.gauge-label {
-    margin: 0;
-    color: var(--cream, #f2ecdf);
-    font-family: var(--font-heading, "Barlow Condensed", sans-serif);
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-}
-
-/* Slightly different needle positions for each dial */
-.gauge-years::after {
-    transform: rotate(5deg);
-}
-
-.gauge-rating::after {
-    transform: rotate(55deg);
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-    .business-dashboard {
-        padding: 20px 14px;
-    }
-
-    .gauge-grid {
-        gap: 10px;
-    }
-
-    .gauge {
-        padding: 5px;
-        border-width: 1px;
-    }
-
-    .gauge-small {
-        font-size: 0.46rem;
-    }
-
-    .gauge-caption {
-        font-size: 0.43rem;
-    }
-
-    .gauge-label {
-        font-size: 0.68rem;
-        letter-spacing: 0.06em;
-    }
-}
-
-@media (max-width: 380px) {
-    .gauge-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .gauge {
-        width: 150px;
-    }
-}
-
-
-/* =====================================================
-   TERRY'S AUTO SALES & SALVAGE
-   Interactive Redline Gauge Effects
-   ===================================================== */
-
-/* 1. Prepare each gauge for the hover animation */
-.gauge {
-    cursor: pointer;
-    transition: transform 0.25s ease, filter 0.25s ease;
-}
-
-.gauge-face {
-    position: relative;
-    overflow: hidden;
-    transition: box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-/* 2. Create the moving gauge needle */
-.gauge-face::before {
-    content: "";
-    position: absolute;
-    z-index: 3;
-    left: 50%;
-    bottom: 50%;
-    width: 3px;
-    height: 36%;
-    background: #e34235;
-    border-radius: 3px;
-    transform: translateX(-50%) rotate(-50deg);
-    transform-origin: 50% 100%;
-    box-shadow: 0 0 4px rgba(227, 66, 53, 0.35);
-    transition:
-        transform 0.65s cubic-bezier(0.2, 0.8, 0.25, 1),
-        box-shadow 0.3s ease;
-}
-
-/* 3. Add the center cap over the needle */
-.gauge-face::after {
-    content: "";
-    position: absolute;
-    z-index: 4;
-    left: 50%;
-    top: 50%;
-    width: 10px;
-    height: 10px;
-    background: #e34235;
-    border: 2px solid #f3ead8;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: box-shadow 0.3s ease;
-}
-
-/* 4. Redline effect when hovering over a gauge */
-.gauge:hover .gauge-face {
-    border-color: #e34235;
-    box-shadow:
-        0 0 8px rgba(227, 66, 53, 0.55),
-        0 0 22px rgba(227, 66, 53, 0.2);
-}
-
-.gauge:hover .gauge-face::before {
-    transform: translateX(-50%) rotate(50deg);
-    box-shadow: 0 0 8px rgba(227, 66, 53, 0.9);
-}
-
-.gauge:hover .gauge-face::after {
-    box-shadow: 0 0 10px rgba(227, 66, 53, 0.8);
-}
-
-/* 5. Slight lift for a more tactile dashboard feel */
-.gauge:hover {
-    transform: translateY(-3px);
-}
-
-/* 6. Keep the effect accessible for reduced-motion users */
-@media (prefers-reduced-motion: reduce) {
-
-    .gauge,
-    .gauge-face,
-    .gauge-face::before,
-    .gauge-face::after {
-        transition: none;
-    }
-}
-
-
-
-/* =====================================================
-   GAUGE SIZE FIX — PRESERVE THE ORIGINAL TICK MARKS
-   ===================================================== */
-
-/* Enlarge the gauge container, not the dial itself */
-.gauge {
-    min-width: 0;
-}
-
-.gauge-face {
-    /* Restore the original dial geometry */
-    width: auto;
-    height: auto;
-    max-width: none;
-    margin-inline: 0;
-
-    /* Keep the circular face and tick marks intact */
-    aspect-ratio: 1 / 1;
-    box-sizing: border-box;
-}
-
-/* Keep the needle short and narrow */
-.gauge-face::before {
-    width: 2px;
-    height: 25%;
-}
-
-/* Keep the center cap compact */
-.gauge-face::after {
-    width: 7px;
-    height: 7px;
-    border-width: 1px;
-}
-
-/* Enlarge the complete gauge without stretching its face */
-.gauge-grid {
-    gap: 28px;
-}
-
-@media (max-width: 600px) {
-    .gauge-grid {
-        gap: 20px;
-    }
-}
-
-
-
-/* Responsive layout */
+/* 15. Tablet layout */
 @media (max-width: 768px) {
     :root {
         --section-space: 64px;
     }
 
     .container {
-        width: min(100% - 32px, var(--container-width));
+        width: min(calc(100% - 32px), var(--container-width));
     }
 
     .header-inner {
@@ -1206,6 +1014,36 @@ a:focus-visible {
     }
 }
 
+/* 16. Mobile layout */
+@media (max-width: 600px) {
+    .business-dashboard {
+        padding: 20px 14px;
+    }
+
+    .gauge-grid {
+        gap: 10px;
+    }
+
+    .gauge {
+        width: min(100%, 150px);
+        padding: 5px;
+        border-width: 1px;
+    }
+
+    .gauge-small {
+        font-size: 0.46rem;
+    }
+
+    .gauge-caption {
+        font-size: 0.43rem;
+    }
+
+    .gauge-label {
+        font-size: 0.68rem;
+        letter-spacing: 0.06em;
+    }
+}
+
 @media (max-width: 480px) {
     .brand-name strong {
         font-size: 1.35rem;
@@ -1246,7 +1084,17 @@ a:focus-visible {
     }
 }
 
-/* Respect reduced-motion preferences */
+@media (max-width: 380px) {
+    .gauge-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gauge {
+        width: 150px;
+    }
+}
+
+/* 17. Reduced-motion accessibility */
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
