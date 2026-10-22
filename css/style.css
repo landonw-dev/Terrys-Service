@@ -312,35 +312,35 @@ p {
 
 
 
-/* Outlined neon T on the right side of the hero */
+
+/* Neon tube outline T */
 .hero::after {
-    content: "T";
+    content: "";
     position: absolute;
     z-index: 0;
     top: 50%;
-    right: 8%;
+    right: 5%;
+    width: clamp(260px, 36vw, 540px);
+    height: 70%;
     transform: translateY(-50%);
-
-    font-family: var(--font-heading);
-    font-size: clamp(18rem, 32vw, 32rem);
-    font-weight: 800;
-    line-height: 0.8;
     pointer-events: none;
 
-    /* Transparent letter with a neon tube outline */
-    color: transparent;
-    -webkit-text-stroke: 3px #f4a096;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 
-    /* Red neon glow */
-    text-shadow:
-        0 0 3px #fff0e9,
-        0 0 7px #ff7668,
-        0 0 15px #e34235,
-        0 0 30px rgba(227, 66, 53, 0.9),
-        0 0 55px rgba(227, 66, 53, 0.65),
-        0 0 90px rgba(227, 66, 53, 0.35);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 360'%3E%3Cpath d='M35 45 H265 M150 45 V320' fill='none' stroke='%23e34235' stroke-width='9' stroke-linecap='round' stroke-linejoin='round' filter='url(%23glow)'/%3E%3Cpath d='M35 45 H265 M150 45 V320' fill='none' stroke='%23fff0e9' stroke-width='2.5' stroke-linecap='round'/%3E%3Cdefs%3E%3Cfilter id='glow' x='-100%25' y='-100%25' width='300%25' height='300%25'%3E%3CfeGaussianBlur stdDeviation='8'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E");
 
-    opacity: 0.9;
+    opacity: 0.95;
+}
+
+@media (max-width: 768px) {
+    .hero::after {
+        right: -8%;
+        width: 300px;
+        height: 60%;
+        opacity: 0.2;
+    }
 }
 
 /* Subtle outline on smaller screens */
