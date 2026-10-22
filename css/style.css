@@ -732,14 +732,15 @@ a:focus-visible {
 }
 
 
-/* Needle anchored below the wording */
+
+/* Needle rotates around the lower pivot */
 .gauge::after {
     content: "";
     position: absolute;
     z-index: 4;
 
-    /* Position the needle from the lower pivot */
-    top: 22%;
+    /* Align the needle's base with the pivot at 56% */
+    top: 20%;
     left: calc(50% - 1.5px);
     width: 3px;
     height: 36%;
@@ -748,15 +749,18 @@ a:focus-visible {
     background: var(--red-hover);
     box-shadow: 0 0 5px rgba(192, 71, 55, 0.65);
 
-    /* Start pointing left */
+    /* Rotate around the bottom of the needle */
     transform: rotate(-55deg);
     transform-origin: 50% 100%;
 
     pointer-events: none;
-    transition:
-        transform 0.65s cubic-bezier(0.2, 0.8, 0.25, 1),
-        box-shadow 0.3s ease;
+    transition: transform 0.65s cubic-bezier(0.2, 0.8, 0.25, 1);
 }
+
+.gauge:hover::after {
+    transform: rotate(55deg);
+}
+
 
 /* Pivot below the center text */
 .gauge::before {
