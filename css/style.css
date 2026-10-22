@@ -654,59 +654,72 @@ a:focus-visible {
 }
 
 
+
 /* =====================================================
-   TERRY'S AUTO SALES & SALVAGE
-   Interactive Redline Gauge Effects
+   10. Interactive Redline Dashboard Gauges
    ===================================================== */
 
-/* 1. Prepare each gauge for the hover animation */
 .gauge {
+    position: relative;
     cursor: pointer;
-    transition: transform 0.25s ease, filter 0.25s ease;
+    transition:
+        transform 0.25s ease,
+        filter 0.25s ease;
 }
 
 .gauge-face {
     position: relative;
     overflow: hidden;
-    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    isolation: isolate;
+    transition:
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
 }
 
-/* 2. Create the moving gauge needle */
+/* Keep the wording above the needle */
+.gauge-face>* {
+    position: relative;
+    z-index: 2;
+}
+
+/* Needle: anchored below the wording */
 .gauge-face::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    bottom: 32%;
+    width: 3px;
+    height: 36%;
+    border-radius: 3px;
+    background: #e34235;
+    transform: translateX(-50%) rotate(-50deg);
+    transform-origin: 50% 100%;
+    box-shadow: 0 0 4px rgba(227, 66, 53, 0.45);
+    transition:
+        transform 0.65s cubic-bezier(0.2, 0.8, 0.25, 1),
+        box-shadow 0.3s ease;
+    pointer-events: none;
+}
+
+/* Center pivot aligned with the needle's base */
+.gauge-face::after {
     content: "";
     position: absolute;
     z-index: 3;
     left: 50%;
-    bottom: 50%;
-    width: 3px;
-    height: 36%;
-    background: #e34235;
-    border-radius: 3px;
-    transform: translateX(-50%) rotate(-50deg);
-    transform-origin: 50% 100%;
-    box-shadow: 0 0 4px rgba(227, 66, 53, 0.35);
-    transition:
-        transform 0.65s cubic-bezier(0.2, 0.8, 0.25, 1),
-        box-shadow 0.3s ease;
-}
-
-/* 3. Add the center cap over the needle */
-.gauge-face::after {
-    content: "";
-    position: absolute;
-    z-index: 4;
-    left: 50%;
-    top: 50%;
+    top: 68%;
     width: 10px;
     height: 10px;
-    background: #e34235;
     border: 2px solid #f3ead8;
     border-radius: 50%;
+    background: #e34235;
     transform: translate(-50%, -50%);
     transition: box-shadow 0.3s ease;
+    pointer-events: none;
 }
 
-/* 4. Redline effect when hovering over a gauge */
+/* Redline glow on hover */
 .gauge:hover .gauge-face {
     border-color: #e34235;
     box-shadow:
@@ -714,6 +727,7 @@ a:focus-visible {
         0 0 22px rgba(227, 66, 53, 0.2);
 }
 
+/* Sweep the needle from left to right */
 .gauge:hover .gauge-face::before {
     transform: translateX(-50%) rotate(50deg);
     box-shadow: 0 0 8px rgba(227, 66, 53, 0.9);
@@ -723,12 +737,28 @@ a:focus-visible {
     box-shadow: 0 0 10px rgba(227, 66, 53, 0.8);
 }
 
-/* 5. Slight lift for a more tactile dashboard feel */
+/* Slight lift for a tactile dashboard feel */
 .gauge:hover {
     transform: translateY(-3px);
 }
 
-/* 6. Keep the effect accessible for reduced-motion users */
+/* Keep the needle's center and text readable */
+.gauge-face {
+    z-index: 3;
+}
+
+/* Make sure each needle starts in a visible position */
+.gauge::after {
+    top: 27%;
+    left: calc(50% - 1px);
+    width: 2px;
+    height: 23%;
+    background: var(--red-hover);
+    border-radius: 4px;
+    box-shadow: 0 0 4px rgba(192, 71, 55, 0.6);
+}
+
+/* Reduced-motion accessibility */
 @media (prefers-reduced-motion: reduce) {
 
     .gauge,
@@ -738,6 +768,7 @@ a:focus-visible {
         transition: none;
     }
 }
+
 
 
 
@@ -845,30 +876,6 @@ a:focus-visible {
 .copyright {
     color: #aaa79e;
 }
-
-
-/* FIX: Keep gauge needles visible above the dial face */
-.gauge::after {
-    z-index: 4;
-    pointer-events: none;
-}
-
-/* Keep the needle's center and text readable */
-.gauge-face {
-    z-index: 3;
-}
-
-/* Make sure each needle starts in a visible position */
-.gauge::after {
-    top: 27%;
-    left: calc(50% - 1px);
-    width: 2px;
-    height: 23%;
-    background: var(--red-hover);
-    border-radius: 4px;
-    box-shadow: 0 0 4px rgba(192, 71, 55, 0.6);
-}
-
 
 /* 15. Tablet layout */
 @media (max-width: 768px) {
