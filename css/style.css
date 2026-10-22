@@ -311,7 +311,8 @@ p {
 }
 
 
-/* Neon T accent on the right side of the hero */
+
+/* Outlined neon T on the right side of the hero */
 .hero::after {
     content: "T";
     position: absolute;
@@ -324,37 +325,33 @@ p {
     font-size: clamp(18rem, 32vw, 32rem);
     font-weight: 800;
     line-height: 0.8;
-
-    color: #fff0e9;
-    opacity: 0.9;
     pointer-events: none;
 
-    /* Neon tube and surrounding glow */
+    /* Transparent letter with a neon tube outline */
+    color: transparent;
+    -webkit-text-stroke: 3px #f4a096;
+
+    /* Red neon glow */
     text-shadow:
-        0 0 3px #fff,
-        0 0 8px #fff0e9,
-        0 0 16px #ff5a49,
-        0 0 32px #e34235,
-        0 0 60px rgba(227, 66, 53, 0.85),
-        0 0 100px rgba(227, 66, 53, 0.45);
+        0 0 3px #fff0e9,
+        0 0 7px #ff7668,
+        0 0 15px #e34235,
+        0 0 30px rgba(227, 66, 53, 0.9),
+        0 0 55px rgba(227, 66, 53, 0.65),
+        0 0 90px rgba(227, 66, 53, 0.35);
 
-    filter: drop-shadow(0 0 18px rgba(227, 66, 53, 0.35));
+    opacity: 0.9;
 }
 
-/* Keep hero text and buttons above the neon letter */
-.hero-content {
-    z-index: 1;
-}
-
-/* Scale back the letter on smaller screens */
+/* Subtle outline on smaller screens */
 @media (max-width: 768px) {
     .hero::after {
         right: 2%;
         font-size: 20rem;
         opacity: 0.18;
+        -webkit-text-stroke-width: 2px;
     }
 }
-
 
 /* Intro strip */
 .intro-strip {
