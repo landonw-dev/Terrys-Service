@@ -694,7 +694,8 @@ a:focus-visible {
     background: rgba(242, 236, 223, 0.22);
 }
 
-/* 11. Gauges — one dial, one set of ticks, one needle */
+
+/* 11. Dashboard Gauges */
 .gauge-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -725,39 +726,47 @@ a:focus-visible {
         inset 0 0 0 5px var(--charcoal),
         0 0 0 3px rgba(242, 236, 223, 0.08);
     cursor: pointer;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    transition:
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
 }
 
-/* The original needle is retained here.
-   Its base stays at the center of the dial. */
+/* Needle: all gauges start left and sweep right */
 .gauge::after {
-    position: absolute;
-    z-index: 2;
-    top: 27%;
-    left: calc(50% - 1px);
-    width: 2px;
-    height: 23%;
-    border-radius: 4px;
-    background: var(--red-hover);
     content: "";
-    transform: rotate(35deg);
+    position: absolute;
+    z-index: 4;
+    top: 16%;
+    left: calc(50% - 1.5px);
+    width: 3px;
+    height: 36%;
+    border-radius: 3px;
+    background: var(--red-hover);
+    box-shadow: 0 0 5px rgba(192, 71, 55, 0.65);
+    transform: rotate(-55deg);
     transform-origin: 50% 100%;
-    box-shadow: 0 0 4px rgba(192, 71, 55, 0.35);
+    pointer-events: none;
     transition:
         transform 0.65s cubic-bezier(0.2, 0.8, 0.25, 1),
         box-shadow 0.3s ease;
 }
 
-/* Each gauge has a different resting needle angle. */
-.gauge-years::after {
-    transform: rotate(5deg);
+/* Center pivot cap */
+.gauge::before {
+    content: "";
+    position: absolute;
+    z-index: 5;
+    top: calc(52% - 5px);
+    left: calc(50% - 5px);
+    width: 10px;
+    height: 10px;
+    border: 2px solid var(--cream);
+    border-radius: 50%;
+    background: var(--red-hover);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
+    pointer-events: none;
 }
 
-.gauge-rating::after {
-    transform: rotate(55deg);
-}
-
-/* Inner dial and readable text */
 .gauge-face {
     position: relative;
     z-index: 3;
@@ -771,7 +780,9 @@ a:focus-visible {
     border-radius: 50%;
     background: var(--charcoal);
     box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.5);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .gauge-small {
@@ -805,7 +816,7 @@ a:focus-visible {
     letter-spacing: 0.12em;
 }
 
-/* Redline hover animation */
+/* Rev the needle toward the right on hover */
 .gauge:hover {
     transform: translateY(-3px);
     box-shadow:
@@ -815,13 +826,8 @@ a:focus-visible {
 }
 
 .gauge:hover::after {
-    transform: rotate(75deg);
+    transform: rotate(55deg);
     box-shadow: 0 0 8px rgba(192, 71, 55, 0.9);
-}
-
-.gauge-years:hover::after,
-.gauge-rating:hover::after {
-    transform: rotate(75deg);
 }
 
 .gauge:hover .gauge-face {
@@ -830,6 +836,7 @@ a:focus-visible {
         inset 0 0 12px rgba(0, 0, 0, 0.5),
         0 0 10px rgba(192, 71, 55, 0.3);
 }
+
 
 /* 12. Reviews */
 .reviews-section {
