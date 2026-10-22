@@ -1080,59 +1080,52 @@ a:focus-visible {
 }
 
 
+
 /* =====================================================
-   GAUGE SIZE AND NEEDLE REFINEMENTS
+   GAUGE SIZE FIX — PRESERVE THE ORIGINAL TICK MARKS
    ===================================================== */
 
-/* 1. Give the gauge dashboard more room */
-.gauge-grid {
-    gap: 28px;
-}
-
+/* Enlarge the gauge container, not the dial itself */
 .gauge {
     min-width: 0;
 }
 
-/* 2. Enlarge the circular gauge faces */
 .gauge-face {
-    width: 180px;
-    height: 180px;
-    max-width: 100%;
-    margin-inline: auto;
+    /* Restore the original dial geometry */
+    width: auto;
+    height: auto;
+    max-width: none;
+    margin-inline: 0;
+
+    /* Keep the circular face and tick marks intact */
+    aspect-ratio: 1 / 1;
+    box-sizing: border-box;
 }
 
-/* 3. Make the needle thinner and shorter */
+/* Keep the needle short and narrow */
 .gauge-face::before {
     width: 2px;
     height: 25%;
-    bottom: 50%;
-    transform: translateX(-50%) rotate(-50deg);
-    transform-origin: 50% 100%;
 }
 
-/* 4. Keep the needle sweep subtle */
-.gauge:hover .gauge-face::before {
-    transform: translateX(-50%) rotate(50deg);
-}
-
-/* 5. Reduce the center cap slightly */
+/* Keep the center cap compact */
 .gauge-face::after {
     width: 7px;
     height: 7px;
     border-width: 1px;
 }
 
-/* 6. Scale down slightly on smaller screens */
+/* Enlarge the complete gauge without stretching its face */
+.gauge-grid {
+    gap: 28px;
+}
+
 @media (max-width: 600px) {
     .gauge-grid {
         gap: 20px;
     }
-
-    .gauge-face {
-        width: 145px;
-        height: 145px;
-    }
 }
+
 
 
 /* Responsive layout */
