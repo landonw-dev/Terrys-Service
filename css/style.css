@@ -744,6 +744,256 @@ a:focus-visible {
     outline-offset: 4px;
 }
 
+
+/* ==========================================
+   VINTAGE GARAGE SIGN + DASHBOARD GAUGES
+   Add this block at the END of style.css
+   ========================================== */
+
+/* Vintage sign treatment for the existing About frame */
+.about-frame {
+    position: relative;
+    padding: 24px;
+    border: 3px solid var(--cream, #f2ecdf);
+    outline: 2px solid var(--red, #a83a2e);
+    outline-offset: 5px;
+    background:
+        repeating-linear-gradient(0deg,
+            transparent 0,
+            transparent 28px,
+            rgba(242, 236, 223, 0.035) 29px),
+        var(--charcoal, #222321);
+    color: var(--cream, #f2ecdf);
+    text-align: center;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.frame-top,
+.frame-bottom {
+    display: block;
+    color: var(--cream, #f2ecdf);
+    font-family: var(--font-heading, "Barlow Condensed", sans-serif);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.frame-top {
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(242, 236, 223, 0.35);
+    font-size: 0.75rem;
+}
+
+.about-symbol {
+    display: grid;
+    width: 96px;
+    height: 96px;
+    place-items: center;
+    margin: 24px auto;
+    border: 4px double var(--cream, #f2ecdf);
+    outline: 1px solid var(--red, #a83a2e);
+    outline-offset: 5px;
+    background: var(--red, #a83a2e);
+    color: #fff;
+    font-family: var(--font-heading, "Barlow Condensed", sans-serif);
+    font-size: 4rem;
+    font-weight: 800;
+}
+
+.frame-bottom {
+    padding-top: 14px;
+    border-top: 1px solid rgba(242, 236, 223, 0.35);
+    font-size: 0.7rem;
+}
+
+.about-caption {
+    margin-top: 18px;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+/* Dashboard panel */
+.business-dashboard {
+    margin-top: 48px;
+    padding: 28px;
+    border: 1px solid #484943;
+    background: var(--charcoal, #222321);
+    color: var(--cream, #f2ecdf);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.dashboard-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.dashboard-heading p {
+    margin: 0;
+    color: var(--cream, #f2ecdf);
+    font-family: var(--font-heading, "Barlow Condensed", sans-serif);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+.dashboard-light {
+    width: 9px;
+    height: 9px;
+    flex: 0 0 9px;
+    border-radius: 50%;
+    background: var(--red, #a83a2e);
+    box-shadow: 0 0 10px rgba(168, 58, 46, 0.7);
+}
+
+.dashboard-rule {
+    height: 1px;
+    flex: 1;
+    background: rgba(242, 236, 223, 0.22);
+}
+
+.gauge-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.gauge-card {
+    min-width: 0;
+    text-align: center;
+}
+
+.gauge {
+    position: relative;
+    display: grid;
+    width: min(100%, 170px);
+    aspect-ratio: 1;
+    place-items: center;
+    margin: 0 auto 14px;
+    padding: 10px;
+    border: 2px solid #77766e;
+    border-radius: 50%;
+    background:
+        repeating-conic-gradient(from -135deg,
+            var(--cream, #f2ecdf) 0deg 1.5deg,
+            transparent 1.5deg 12deg),
+        #343530;
+    box-shadow:
+        inset 0 0 0 5px #222321,
+        0 0 0 3px rgba(242, 236, 223, 0.08);
+}
+
+/* Red dashboard needle */
+.gauge::after {
+    position: absolute;
+    top: 19%;
+    left: calc(50% - 2px);
+    width: 4px;
+    height: 34%;
+    border-radius: 4px;
+    background: var(--red-hover, #c04737);
+    content: "";
+    transform: rotate(35deg);
+    transform-origin: 50% 100%;
+    box-shadow: 0 0 5px rgba(192, 71, 55, 0.35);
+}
+
+.gauge-face {
+    z-index: 1;
+    display: flex;
+    width: 72%;
+    height: 72%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #5e5e56;
+    border-radius: 50%;
+    background: var(--charcoal, #222321);
+    box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.5);
+}
+
+.gauge-small {
+    color: #c7c1b5;
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.gauge-face strong {
+    margin: 3px 0;
+    color: var(--cream, #f2ecdf);
+    font-family: var(--font-heading, "Barlow Condensed", sans-serif);
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    line-height: 1;
+}
+
+.gauge-caption {
+    color: var(--red-hover, #c04737);
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.gauge-label {
+    margin: 0;
+    color: var(--cream, #f2ecdf);
+    font-family: var(--font-heading, "Barlow Condensed", sans-serif);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+/* Slightly different needle positions for each dial */
+.gauge-years::after {
+    transform: rotate(5deg);
+}
+
+.gauge-rating::after {
+    transform: rotate(55deg);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .business-dashboard {
+        padding: 20px 14px;
+    }
+
+    .gauge-grid {
+        gap: 10px;
+    }
+
+    .gauge {
+        padding: 5px;
+        border-width: 1px;
+    }
+
+    .gauge-small {
+        font-size: 0.46rem;
+    }
+
+    .gauge-caption {
+        font-size: 0.43rem;
+    }
+
+    .gauge-label {
+        font-size: 0.68rem;
+        letter-spacing: 0.06em;
+    }
+}
+
+@media (max-width: 380px) {
+    .gauge-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gauge {
+        width: 150px;
+    }
+}
+
+
 /* Responsive layout */
 @media (max-width: 768px) {
     :root {
