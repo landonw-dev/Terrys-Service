@@ -1079,6 +1079,62 @@ a:focus-visible {
     }
 }
 
+
+/* =====================================================
+   GAUGE SIZE AND NEEDLE REFINEMENTS
+   ===================================================== */
+
+/* 1. Give the gauge dashboard more room */
+.gauge-grid {
+    gap: 28px;
+}
+
+.gauge {
+    min-width: 0;
+}
+
+/* 2. Enlarge the circular gauge faces */
+.gauge-face {
+    width: 180px;
+    height: 180px;
+    max-width: 100%;
+    margin-inline: auto;
+}
+
+/* 3. Make the needle thinner and shorter */
+.gauge-face::before {
+    width: 2px;
+    height: 25%;
+    bottom: 50%;
+    transform: translateX(-50%) rotate(-50deg);
+    transform-origin: 50% 100%;
+}
+
+/* 4. Keep the needle sweep subtle */
+.gauge:hover .gauge-face::before {
+    transform: translateX(-50%) rotate(50deg);
+}
+
+/* 5. Reduce the center cap slightly */
+.gauge-face::after {
+    width: 7px;
+    height: 7px;
+    border-width: 1px;
+}
+
+/* 6. Scale down slightly on smaller screens */
+@media (max-width: 600px) {
+    .gauge-grid {
+        gap: 20px;
+    }
+
+    .gauge-face {
+        width: 145px;
+        height: 145px;
+    }
+}
+
+
 /* Responsive layout */
 @media (max-width: 768px) {
     :root {
