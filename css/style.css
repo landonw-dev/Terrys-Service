@@ -653,222 +653,92 @@ a:focus-visible {
     width: 100%;
 }
 
-/* 10. Dashboard panel */
-.business-dashboard {
-    margin-top: 48px;
-    padding: 28px;
-    border: 1px solid #484943;
-    background: var(--charcoal);
-    color: var(--cream);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-}
 
-.dashboard-heading {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 28px;
-}
+/* =====================================================
+   TERRY'S AUTO SALES & SALVAGE
+   Interactive Redline Gauge Effects
+   ===================================================== */
 
-.dashboard-heading p {
-    margin: 0;
-    color: var(--cream);
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-}
-
-.dashboard-light {
-    width: 9px;
-    height: 9px;
-    flex: 0 0 9px;
-    border-radius: 50%;
-    background: var(--red);
-    box-shadow: 0 0 10px rgba(168, 58, 46, 0.7);
-}
-
-.dashboard-rule {
-    height: 1px;
-    flex: 1;
-    background: rgba(242, 236, 223, 0.22);
-}
-
-
-/* 11. Dashboard Gauges */
-.gauge-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
-}
-
-.gauge-card {
-    min-width: 0;
-    text-align: center;
-}
-
+/* 1. Prepare each gauge for the hover animation */
 .gauge {
-    position: relative;
+    cursor: pointer;
+    transition: transform 0.25s ease, filter 0.25s ease;
 }
-
-.gauge-needle {
-    position: absolute;
-    z-index: 4;
-    left: 50%;
-    top: 30%;
-    width: 3px;
-    height: 26%;
-    border-radius: 3px;
-    background: var(--red-hover);
-    transform: translateX(-50%) rotate(-55deg);
-    transform-origin: 50% 100%;
-    transition: transform 0.65s ease;
-    pointer-events: none;
-}
-
-.gauge-needle::after {
-    content: "";
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    width: 10px;
-    height: 10px;
-    border: 2px solid var(--cream);
-    border-radius: 50%;
-    background: var(--red-hover);
-    transform: translateX(-50%);
-}
-
-.gauge:hover .gauge-needle {
-    transform: translateX(-50%) rotate(55deg);
-}
-
-
-/* Needle positioned lower, with its base at the pivot */
-.gauge::after {
-    content: "";
-    position: absolute;
-    z-index: 4;
-
-    top: 30%;
-    left: calc(50% - 1.5px);
-    width: 3px;
-    width: 3px;
-
-    height: 26%;
-
-    border-radius: 3px;
-    background: var(--red-hover);
-    box-shadow: 0 0 5px rgba(192, 71, 55, 0.65);
-
-    transform: rotate(-55deg);
-    transform-origin: 50% 100%;
-
-    pointer-events: none;
-    transition: transform 0.65s cubic-bezier(0.2, 0.8, 0.25, 1);
-}
-
-.gauge:hover::after {
-    transform: rotate(55deg);
-}
-
-
-
-/* Pivot below the center text */
-.gauge::before {
-    content: "";
-    position: absolute;
-    z-index: 5;
-
-    top: 56%;
-    left: calc(50% - 5px);
-    width: 10px;
-    height: 10px;
-
-    border: 2px solid var(--cream);
-    border-radius: 50%;
-    background: var(--red-hover);
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
-
-    pointer-events: none;
-}
-
-/* Rev toward the right on hover */
-.gauge:hover::after {
-    transform: rotate(55deg);
-    box-shadow: 0 0 8px rgba(192, 71, 55, 0.9);
-}
-
 
 .gauge-face {
     position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* 2. Create the moving gauge needle */
+.gauge-face::before {
+    content: "";
+    position: absolute;
     z-index: 3;
-    display: flex;
-    width: 72%;
-    height: 72%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #5e5e56;
-    border-radius: 50%;
-    background: var(--charcoal);
-    box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.5);
+    left: 50%;
+    bottom: 50%;
+    width: 3px;
+    height: 36%;
+    background: #e34235;
+    border-radius: 3px;
+    transform: translateX(-50%) rotate(-50deg);
+    transform-origin: 50% 100%;
+    box-shadow: 0 0 4px rgba(227, 66, 53, 0.35);
     transition:
-        border-color 0.3s ease,
+        transform 0.65s cubic-bezier(0.2, 0.8, 0.25, 1),
         box-shadow 0.3s ease;
 }
 
-.gauge-small {
-    color: #c7c1b5;
-    font-size: 0.58rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
+/* 3. Add the center cap over the needle */
+.gauge-face::after {
+    content: "";
+    position: absolute;
+    z-index: 4;
+    left: 50%;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    background: #e34235;
+    border: 2px solid #f3ead8;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: box-shadow 0.3s ease;
 }
 
-.gauge-face strong {
-    margin: 3px 0;
-    color: var(--cream);
-    font-family: var(--font-heading);
-    font-size: clamp(1.8rem, 4vw, 2.6rem);
-    line-height: 1;
+/* 4. Redline effect when hovering over a gauge */
+.gauge:hover .gauge-face {
+    border-color: #e34235;
+    box-shadow:
+        0 0 8px rgba(227, 66, 53, 0.55),
+        0 0 22px rgba(227, 66, 53, 0.2);
 }
 
-.gauge-caption {
-    color: var(--red-hover);
-    font-size: 0.55rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
+.gauge:hover .gauge-face::before {
+    transform: translateX(-50%) rotate(50deg);
+    box-shadow: 0 0 8px rgba(227, 66, 53, 0.9);
 }
 
-.gauge-label {
-    margin: 0;
-    color: var(--cream);
-    font-family: var(--font-heading);
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
+.gauge:hover .gauge-face::after {
+    box-shadow: 0 0 10px rgba(227, 66, 53, 0.8);
 }
 
-/* Rev the needle toward the right on hover */
+/* 5. Slight lift for a more tactile dashboard feel */
 .gauge:hover {
     transform: translateY(-3px);
-    box-shadow:
-        inset 0 0 0 5px var(--charcoal),
-        0 0 10px rgba(192, 71, 55, 0.45),
-        0 0 22px rgba(192, 71, 55, 0.18);
 }
 
-.gauge:hover::after {
-    transform: rotate(55deg);
-    box-shadow: 0 0 8px rgba(192, 71, 55, 0.9);
+/* 6. Keep the effect accessible for reduced-motion users */
+@media (prefers-reduced-motion: reduce) {
+
+    .gauge,
+    .gauge-face,
+    .gauge-face::before,
+    .gauge-face::after {
+        transition: none;
+    }
 }
 
-.gauge:hover .gauge-face {
-    border-color: var(--red-hover);
-    box-shadow:
-        inset 0 0 12px rgba(0, 0, 0, 0.5),
-        0 0 10px rgba(192, 71, 55, 0.3);
-}
 
 
 /* 12. Reviews */
