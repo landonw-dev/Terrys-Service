@@ -2,10 +2,15 @@
 <html lang="en">
 
 <head>
+    <!-- ========================================
+         1. PAGE SETTINGS AND STYLESHEETS
+         Edit the page title, description, or fonts here.
+         ======================================== -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Terry's Auto Sales and Salvage offers automotive repair, used auto parts, and salvage services in Waverly, Kansas. Established in 1987.">
+
     <title>Terry's Auto Sales and Salvage | Waverly, Kansas</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,14 +18,22 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap"
         rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+
+    <!-- ========================================
+         2. HEADER AND NAVIGATION
+         Edit the business name or navigation links here.
+         ======================================== -->
     <header class="site-header">
         <div class="container header-inner">
+
             <a class="brand" href="#home" aria-label="Terry's Auto Sales and Salvage home">
                 <span class="brand-mark">T</span>
+
                 <span class="brand-name">
                     <strong>TERRY'S</strong>
                     <small>AUTO SALES &amp; SALVAGE</small>
@@ -33,17 +46,27 @@
                 <a href="#about">About</a>
                 <a href="#contact">Contact</a>
             </nav>
+
         </div>
     </header>
 
     <main>
+
+        <!-- ========================================
+             3. HERO / MAIN BANNER
+             Edit the main headline, description, and buttons here.
+             ======================================== -->
         <section class="hero" id="home">
             <div class="hero-overlay"></div>
 
             <div class="container hero-content">
                 <p class="eyebrow">TERRY'S AUTO SALES AND SALVAGE</p>
 
-                <h1>HONEST WORK.<br>RELIABLE REPAIRS.<br><span>BACK ON THE ROAD.</span></h1>
+                <h1>
+                    HONEST WORK.<br>
+                    RELIABLE REPAIRS.<br>
+                    <span>BACK ON THE ROAD.</span>
+                </h1>
 
                 <p class="hero-description">
                     Your local destination for automotive repair, used auto parts,
@@ -55,16 +78,21 @@
                     <a class="button button-outline" href="#contact">Get in Touch</a>
                 </div>
 
+                <!-- Vintage-style service sign -->
                 <div class="hero-stamp" aria-label="Automotive repair, used parts, and salvage">
                     <span>AUTO REPAIR</span>
-                    <i></i>
+                    <i aria-hidden="true"></i>
                     <span>USED PARTS</span>
-                    <i></i>
+                    <i aria-hidden="true"></i>
                     <span>SALVAGE</span>
                 </div>
             </div>
         </section>
 
+        <!-- ========================================
+             4. BUSINESS HIGHLIGHT STRIP
+             Edit the short slogan and establishment year here.
+             ======================================== -->
         <section class="intro-strip">
             <div class="container intro-inner">
                 <p>DEPENDABLE SERVICE. PRACTICAL SOLUTIONS. LOCAL EXPERIENCE.</p>
@@ -72,49 +100,79 @@
             </div>
         </section>
 
+        <!-- ========================================
+             5. SERVICES
+             Edit service titles, descriptions, and button labels here.
+             ======================================== -->
         <section class="section services-section" id="services">
             <div class="container">
+
                 <div class="section-heading">
                     <p class="eyebrow">WHAT WE DO</p>
                     <h2>BUILT AROUND <span>YOUR VEHICLE.</span></h2>
-                    <p>Whether your vehicle needs attention or you're looking for parts, we're here to help.</p>
+                    <p>
+                        Whether your vehicle needs attention or you're looking for parts,
+                        we're here to help.
+                    </p>
                 </div>
 
+                <!-- Keep both service cards inside this grid for matching sizes. -->
                 <div class="service-grid">
+
+                    <!-- Service card 1: Automotive repair -->
                     <article class="service-card">
                         <div class="service-card-top">
                             <span class="service-number">01</span>
                             <span class="service-symbol" aria-hidden="true">⚙</span>
                         </div>
+
                         <p class="card-kicker">KEEP MOVING</p>
                         <h3>Automotive Repair</h3>
+
                         <p>
                             Get help with your vehicle's repair needs from a local automotive
                             business focused on practical service.
                         </p>
-                        <a class="text-link" href="#contact">DISCUSS A REPAIR <span aria-hidden="true">→</span></a>
+
+                        <a class="text-link" href="#contact">
+                            DISCUSS A REPAIR <span aria-hidden="true">→</span>
+                        </a>
                     </article>
 
+                    <!-- Service card 2: Used parts and salvage -->
                     <article class="service-card">
                         <div class="service-card-top">
                             <span class="service-number">02</span>
                             <span class="service-symbol" aria-hidden="true">▦</span>
                         </div>
+
                         <p class="card-kicker">FIND WHAT YOU NEED</p>
                         <h3>Used Auto Parts &amp; Salvage</h3>
+
                         <p>
                             Looking for used automotive parts or salvage-related services?
                             Reach out to discuss what you're looking for.
                         </p>
-                        <a class="text-link" href="#contact">ASK ABOUT PARTS <span aria-hidden="true">→</span></a>
+
+                        <a class="text-link" href="#contact">
+                            ASK ABOUT PARTS <span aria-hidden="true">→</span>
+                        </a>
                     </article>
+
                 </div>
             </div>
         </section>
 
+        <!-- ========================================
+             6. ABOUT THE BUSINESS
+             Edit business history, location, and About text here.
+             ======================================== -->
         <section class="section about-section" id="about">
             <div class="container">
+
                 <div class="about-grid">
+
+                    <!-- Vintage garage sign -->
                     <div class="about-visual">
                         <div class="garage-sign">
                             <span class="sign-top">SERVING WAVERLY, KANSAS</span>
@@ -122,12 +180,20 @@
                             <span class="sign-name">TERRY'S</span>
                             <span class="sign-bottom">AUTO SALES &amp; SALVAGE</span>
                         </div>
-                        <p class="about-caption">LOCAL HISTORY. PRACTICAL AUTOMOTIVE SERVICE.</p>
+
+                        <p class="about-caption">
+                            LOCAL HISTORY. PRACTICAL AUTOMOTIVE SERVICE.
+                        </p>
                     </div>
 
+                    <!-- About text -->
                     <div class="about-copy">
                         <p class="eyebrow">A LOCAL BUSINESS</p>
-                        <h2>ROOTED IN EXPERIENCE.<br><span>BUILT ON TRUST.</span></h2>
+
+                        <h2>
+                            ROOTED IN EXPERIENCE.<br>
+                            <span>BUILT ON TRUST.</span>
+                        </h2>
 
                         <p>
                             Terry's Auto Sales and Salvage has been serving the Waverly,
@@ -141,35 +207,77 @@
                             Bureau and to continue serving the local community.
                         </p>
                     </div>
+
                 </div>
 
-                <div class="about-stats" aria-label="Business highlights">
-                    <article class="stat-card">
-                        <span class="stat-label">ESTABLISHED</span>
-                        <strong>1987</strong>
-                        <span class="stat-detail">Serving the community</span>
-                        <span class="stat-meter meter-one" aria-hidden="true"></span>
-                    </article>
+                <!-- ========================================
+                     7. DASHBOARD GAUGES / BUSINESS FACTS
+                     Edit the year, years in business, and rating here.
+                     The circular gauge appearance is controlled by CSS.
+                     ======================================== -->
+                <div class="business-dashboard" aria-label="Business facts dashboard">
 
-                    <article class="stat-card">
-                        <span class="stat-label">YEARS IN BUSINESS</span>
-                        <strong>39<span class="stat-unit"> YEARS</span></strong>
-                        <span class="stat-detail">Since 1987</span>
-                        <span class="stat-meter meter-two" aria-hidden="true"></span>
-                    </article>
+                    <div class="dashboard-heading">
+                        <span class="dashboard-light" aria-hidden="true"></span>
+                        <p>UNDER THE HOOD</p>
+                        <span class="dashboard-rule" aria-hidden="true"></span>
+                    </div>
 
-                    <article class="stat-card">
-                        <span class="stat-label">BBB RATING</span>
-                        <strong>A+</strong>
-                        <span class="stat-detail">Better Business Bureau</span>
-                        <span class="stat-meter meter-three" aria-hidden="true"></span>
-                    </article>
+                    <div class="gauge-grid">
+
+                        <!-- Gauge 1: Established year -->
+                        <article class="gauge-card">
+                            <div class="gauge gauge-year" role="img" aria-label="Established in 1987">
+                                <div class="gauge-face">
+                                    <span class="gauge-small">EST.</span>
+                                    <strong>1987</strong>
+                                    <span class="gauge-caption">ESTABLISHED</span>
+                                </div>
+                            </div>
+
+                            <p class="gauge-label">LOCAL ROOTS</p>
+                        </article>
+
+                        <!-- Gauge 2: Years in business -->
+                        <article class="gauge-card">
+                            <div class="gauge gauge-years" role="img" aria-label="39 years in business">
+                                <div class="gauge-face">
+                                    <span class="gauge-small">YEARS IN</span>
+                                    <strong>39</strong>
+                                    <span class="gauge-caption">BUSINESS</span>
+                                </div>
+                            </div>
+
+                            <p class="gauge-label">EXPERIENCE</p>
+                        </article>
+
+                        <!-- Gauge 3: Better Business Bureau rating -->
+                        <article class="gauge-card">
+                            <div class="gauge gauge-rating" role="img"
+                                aria-label="A plus Better Business Bureau rating">
+                                <div class="gauge-face">
+                                    <span class="gauge-small">BBB RATING</span>
+                                    <strong>A+</strong>
+                                    <span class="gauge-caption">RATED</span>
+                                </div>
+                            </div>
+
+                            <p class="gauge-label">REPUTATION</p>
+                        </article>
+
+                    </div>
                 </div>
+
             </div>
         </section>
 
+        <!-- ========================================
+             8. CUSTOMER REVIEWS
+             Replace each placeholder with its original customer quote.
+             ======================================== -->
         <section class="section reviews-section" id="reviews">
             <div class="container">
+
                 <div class="section-heading">
                     <p class="eyebrow">CUSTOMER FEEDBACK</p>
                     <h2>WORDS FROM <span>OUR CUSTOMERS.</span></h2>
@@ -177,63 +285,83 @@
                 </div>
 
                 <div class="review-grid">
+
+                    <!-- Review 1 -->
                     <article class="review-card">
                         <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
                         <blockquote>
-                            <!-- Restore the original review quote here. -->
                             [Insert June B.'s original review.]
                         </blockquote>
                         <p class="review-author">JUNE B.</p>
                     </article>
 
+                    <!-- Review 2 -->
                     <article class="review-card">
                         <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
                         <blockquote>
-                            <!-- Restore the original review quote here. -->
                             [Insert Matt H.'s original review.]
                         </blockquote>
                         <p class="review-author">MATT H.</p>
                     </article>
 
+                    <!-- Review 3 -->
                     <article class="review-card">
                         <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
                         <blockquote>
-                            <!-- Restore the original review quote here. -->
                             [Insert George P.'s original review.]
                         </blockquote>
                         <p class="review-author">GEORGE P.</p>
                     </article>
 
+                    <!-- Review 4 -->
                     <article class="review-card">
                         <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
                         <blockquote>
-                            <!-- Restore the original review quote here. -->
                             [Insert Brad C.'s original review.]
                         </blockquote>
                         <p class="review-author">BRAD C.</p>
                     </article>
+
                 </div>
             </div>
         </section>
 
+        <!-- ========================================
+             9. CONTACT BANNER
+             Edit the contact message or contact page link here.
+             ======================================== -->
         <section class="contact-banner" id="contact">
             <div class="container contact-inner">
+
                 <div>
                     <p class="eyebrow">LET'S GET STARTED</p>
                     <h2>HOW CAN WE <span>HELP YOU?</span></h2>
-                    <p>Contact Terry's Auto Sales and Salvage to ask about repairs, used parts, or salvage services.</p>
+                    <p>
+                        Contact Terry's Auto Sales and Salvage to ask about repairs,
+                        used parts, or salvage services.
+                    </p>
                 </div>
 
-                <!-- Update this link if your contact page uses a different filename. -->
-                <a class="button button-primary" href="contact.html">Contact Us <span aria-hidden="true">→</span></a>
+                <!-- Make sure contact.html exists in your website repository. -->
+                <a class="button button-primary" href="contact.html">
+                    Contact Us <span aria-hidden="true">→</span>
+                </a>
+
             </div>
         </section>
+
     </main>
 
+    <!-- ========================================
+         10. FOOTER
+         Edit the footer location or copyright year here.
+         ======================================== -->
     <footer class="site-footer">
         <div class="container footer-inner">
+
             <a class="brand footer-brand" href="#home">
                 <span class="brand-mark">T</span>
+
                 <span class="brand-name">
                     <strong>TERRY'S</strong>
                     <small>AUTO SALES &amp; SALVAGE</small>
@@ -241,9 +369,14 @@
             </a>
 
             <p>Waverly, Kansas · Established 1987</p>
-            <p class="copyright">&copy; 2026 Terry's Auto Sales and Salvage. All rights reserved.</p>
+
+            <p class="copyright">
+                &copy; 2026 Terry's Auto Sales and Salvage. All rights reserved.
+            </p>
+
         </div>
     </footer>
+
 </body>
 
 </html>
