@@ -59,126 +59,6 @@
         <section class="hero" id="home">
             <div class="hero-overlay"></div>
 
-            <!-- Technical engine blueprint illustration -->
-            <div class="hero-blueprint" aria-hidden="true">
-                <svg viewBox="0 0 620 500" xmlns="http://www.w3.org/2000/svg" role="presentation">
-
-                    <defs>
-                        <pattern id="blueprint-grid" width="25" height="25" patternUnits="userSpaceOnUse">
-                            <path d="M25 0H0V25" fill="none" stroke="#f2ecdf" stroke-opacity=".09" stroke-width=".6" />
-                        </pattern>
-                    </defs>
-
-                    <!-- Blueprint background -->
-                    <rect x="18" y="18" width="584" height="464" fill="url(#blueprint-grid)" />
-
-                    <!-- Technical border and measurement marks -->
-                    <g fill="none" stroke="#f2ecdf" stroke-opacity=".55" stroke-width="1">
-                        <path d="M45 55H575V445H45Z" />
-                        <path d="M45 45V65M575 45V65M45 55H575" />
-                        <path d="M35 100H55M35 200H55M35 300H55M35 400H55" />
-                        <path d="M100 45V65M200 45V65M300 45V65M400 45V65M500 45V65" />
-                        <circle cx="45" cy="55" r="3" />
-                        <circle cx="575" cy="55" r="3" />
-                        <circle cx="45" cy="445" r="3" />
-                        <circle cx="575" cy="445" r="3" />
-                    </g>
-
-                    <!-- Engine assembly linework -->
-                    <g fill="none" stroke="#f2ecdf" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-
-                        <!-- Intake manifold -->
-                        <path d="M188 142L218 104L263 88H350L397 111L425 147L413 184L385 202H224L194 183Z" />
-                        <path d="M218 104L235 145L255 174
-                         M263 88L270 130L290 174
-                         M305 88L310 130L322 174
-                         M348 89L351 130L355 174
-                         M390 108L382 146L375 180" />
-                        <path d="M224 202L236 216H382L397 202" />
-
-                        <!-- Left cylinder bank -->
-                        <path d="M188 175L145 198L131 255L157 312L213 331L244 301L224 216Z" />
-                        <path d="M151 213L199 225L215 266L199 307L161 291
-                         M160 232L192 240L201 266L190 292L164 282" />
-                        <circle cx="178" cy="263" r="12" />
-                        <circle cx="178" cy="263" r="5" />
-
-                        <!-- Right cylinder bank -->
-                        <path d="M397 175L444 196L462 254L437 311L385 331L355 301L375 216Z" />
-                        <path d="M432 211L388 225L372 266L389 307L428 290
-                         M422 231L396 240L386 266L398 291L421 281" />
-                        <circle cx="410" cy="263" r="12" />
-                        <circle cx="410" cy="263" r="5" />
-
-                        <!-- Timing cover -->
-                        <path d="M244 216H355L370 285L345 347H255L230 285Z" />
-
-                        <!-- Main pulley -->
-                        <circle cx="300" cy="264" r="38" />
-                        <circle cx="300" cy="264" r="28" />
-                        <circle cx="300" cy="264" r="10" />
-                        <circle cx="300" cy="264" r="4" />
-
-                        <!-- Auxiliary pulleys and belt path -->
-                        <path d="M240 222C210 235 209 285 232 308L254 326L266 304L252 281L259 245Z" />
-                        <circle cx="239" cy="242" r="17" />
-                        <circle cx="239" cy="242" r="8" />
-                        <circle cx="249" cy="307" r="14" />
-                        <circle cx="249" cy="307" r="6" />
-                        <circle cx="300" cy="333" r="17" />
-                        <circle cx="300" cy="333" r="8" />
-                        <circle cx="359" cy="307" r="14" />
-                        <circle cx="359" cy="307" r="6" />
-
-                        <!-- Oil pan -->
-                        <path d="M255 347L264 371H337L346 347
-                         M264 371L276 385H325L337 371
-                         M279 385V396H322V385" />
-
-                        <!-- Fasteners and mechanical details -->
-                        <g stroke-width="1">
-                            <circle cx="210" cy="199" r="4" />
-                            <circle cx="230" cy="211" r="4" />
-                            <circle cx="372" cy="211" r="4" />
-                            <circle cx="392" cy="199" r="4" />
-                            <circle cx="155" cy="291" r="3" />
-                            <circle cx="425" cy="291" r="3" />
-                            <path d="M270 184H330M270 190H330
-                             M278 355H322M278 361H322" />
-                        </g>
-                    </g>
-
-                    <!-- Orange-red technical callout lines -->
-                    <g fill="none" stroke="#a83a2e" stroke-width="1.7">
-                        <path d="M354 105L455 63H515" />
-                        <path d="M443 241L494 214H545" />
-                        <path d="M248 307L181 375H100" />
-                        <path d="M345 349L416 400H490" />
-                    </g>
-
-                    <!-- Blueprint labels -->
-                    <g fill="#f2ecdf" font-family="monospace" font-size="10" letter-spacing="1.2">
-                        <text x="48" y="38">ENGINE ASSEMBLY</text>
-                        <text x="462" y="57">INTAKE</text>
-                        <text x="498" y="207">CYLINDER</text>
-                        <text x="498" y="220">BANK</text>
-                        <text x="48" y="390">SERPENTINE BELT</text>
-                        <text x="420" y="416">OIL SYSTEM</text>
-                        <text x="48" y="466">TECHNICAL SERIES / 01</text>
-                        <text x="474" y="466">TAS-1987</text>
-                    </g>
-
-                    <!-- Alignment marks -->
-                    <g stroke="#a83a2e" stroke-width="1.5">
-                        <path d="M300 24V38M293 31H307" />
-                        <path d="M300 462V476M293 469H307" />
-                        <path d="M24 250H38M31 243V257" />
-                        <path d="M582 250H596M589 243V257" />
-                    </g>
-                </svg>
-            </div>
-
-            <!-- Hero text -->
             <div class="container hero-content">
                 <p class="eyebrow">TERRY'S AUTO SALES AND SALVAGE</p>
 
@@ -194,14 +74,11 @@
                 </p>
 
                 <div class="hero-actions">
-                    <a class="button button-primary" href="#services">
-                        Explore Services
-                    </a>
-                    <a class="button button-outline" href="#contact">
-                        Get in Touch
-                    </a>
+                    <a class="button button-primary" href="#services">Explore Services</a>
+                    <a class="button button-outline" href="#contact">Get in Touch</a>
                 </div>
 
+                <!-- Vintage-style service sign -->
                 <div class="hero-stamp" aria-label="Automotive repair, used parts, and salvage">
                     <span>AUTO REPAIR</span>
                     <i aria-hidden="true"></i>
@@ -211,7 +88,6 @@
                 </div>
             </div>
         </section>
-
 
         <!-- ========================================
              4. BUSINESS HIGHLIGHT STRIP
