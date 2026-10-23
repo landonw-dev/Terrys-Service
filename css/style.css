@@ -1197,6 +1197,78 @@ a:focus-visible {
     }
 }
 
+
+/* ==========================================
+   HERO ENGINE BLUEPRINT
+   Technical linework with red-orange accents
+   ========================================== */
+
+.hero-blueprint {
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    right: max(2%, calc((100% - 1400px) / 2));
+    width: min(53%, 720px);
+    transform: translateY(-50%);
+    opacity: 0.88;
+    pointer-events: none;
+}
+
+.hero-blueprint svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+/* Keep the hero copy above the blueprint. */
+.hero-content>* {
+    position: relative;
+    z-index: 1;
+}
+
+/* Leave enough room for the illustration on desktop. */
+.hero h1 {
+    max-width: 620px;
+    font-size: clamp(3.2rem, 6vw, 5.4rem);
+}
+
+.hero-description {
+    max-width: 500px;
+}
+
+/* Tablet: move the drawing behind the text. */
+@media (max-width: 768px) {
+    .hero-blueprint {
+        top: auto;
+        right: -12%;
+        bottom: -2%;
+        width: 85%;
+        transform: none;
+        opacity: 0.19;
+    }
+
+    .hero h1 {
+        max-width: 100%;
+        font-size: clamp(3rem, 11vw, 5rem);
+    }
+
+    .hero-description {
+        max-width: 560px;
+    }
+}
+
+/* Mobile: keep the blueprint subtle and out of the way. */
+@media (max-width: 480px) {
+    .hero-blueprint {
+        right: -28%;
+        bottom: 0;
+        width: 110%;
+        opacity: 0.14;
+    }
+}
+
+
 /* Respect reduced-motion preferences */
 @media (prefers-reduced-motion: reduce) {
     html {
